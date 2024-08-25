@@ -11,3 +11,121 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.hamburger-menu {
+  position: relative;
+}
+
+/* Hamburger button styles */
+.hamburger-menu button {
+  display: none; /* Hide by default for larger screens */
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* Menu styles */
+.menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Display menu items horizontally by default */
+}
+
+.menu li {
+  margin-right: 20px; /* Add space between menu items */
+}
+
+.menu li:last-child {
+  margin-right: 0; /* Remove right margin from last item */
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: #007bff;
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+
+  .menu-desktop {display: none;}
+
+  .hamburger-menu button {
+    display: block; /* Show hamburger button on mobile */
+  }
+
+  .menu {
+    display: none; /* Hide menu by default on mobile */
+    flex-direction: column; /* Stack menu items vertically on mobile */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 10px;
+  }
+
+  /* When menu is open */
+  .hamburger-menu button + .menu {
+    display: flex; /* Use flex to maintain consistent layout */
+  }
+
+  .menu li {
+    margin-right: 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .menu li:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+
+  .menu a {
+    display: block;
+    padding: 10px 0;
+  }
+}
+
+
+
+@media (min-width: 767px) {
+
+.menu-desktop {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-desktop li {
+    padding: 15px 0;
+}
+
+.menu-desktop a {
+    text-decoration: none;
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.menu-desktop a:hover {
+    background-color: #e0e0e0;
+    color: #000;
+}
+
+}
